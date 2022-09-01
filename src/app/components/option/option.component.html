@@ -1,0 +1,11 @@
+<div class="containeropt">
+    <h1>Choose the user type for {{this.worktype}}</h1>
+    <div class="btnContainer">
+        <button routerLink="/{{this.worktype}}" [state]="{usertype:'admin'}" class="bttnopt" mat-flat-button
+            color="accent">As
+            Admin</button>
+        <button routerLink="/{{this.worktype}}" [state]="{usertype:'salesPerson'}" class="bttnopt" mat-flat-button
+            color="accent">As
+            Salesperson</button>
+    </div>
+</div>

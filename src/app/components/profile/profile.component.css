@@ -1,0 +1,45 @@
+mat-card {
+    background-color: white;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 22%;
+    margin-bottom: 20px;
+    border: solid gainsboro 4px;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+}
+
+mat-progress-bar {
+    margin-bottom: 20px;
+}
+
+mat-card-title,
+mat-card-actions {
+    color: rgb(246, 55, 160);
+}
+
+mat-card {
+    margin-top: 10%;
+}
+
+
+@media screen and (min-width:520px) {
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        margin-left: 32%;
+        margin-bottom: 30px;
+    }
+
+
+}

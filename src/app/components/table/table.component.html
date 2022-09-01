@@ -1,0 +1,72 @@
+<h2>{{this.datatype}} Details</h2>
+
+
+<table *ngIf="this.datatype=='product'">
+    <tr>
+        <th>Model</th>
+        <th>ProductType</th>
+        <th>Price</th>
+    </tr>
+    <tr *ngFor="let i of data">
+        <td>{{i.model}}</td>
+        <td>{{i.productType}}</td>
+        <td>{{i.price}}</td>
+    </tr>
+</table>
+
+<table *ngIf="this.datatype=='admin'||this.datatype=='salesPerson'">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>MobileNumber</th>
+        <th *ngIf="this.datatype=='salesPerson'">Quota Amount</th>
+        <th *ngIf="this.datatype=='salesPerson'">Commission</th>
+        <th *ngIf="this.datatype=='salesPerson'">Total Sale</th>
+        <th *ngIf="this.datatype=='admin'">Update</th>
+        <th *ngIf="this.datatype=='admin'">Delete</th>
+
+    </tr>
+    <tr *ngFor="let i of data">
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.mobileNumber}}</td>
+        <td *ngIf="this.datatype=='salesPerson'">{{i.quotaAmount}}</td>
+        <td *ngIf="this.datatype=='salesPerson'">{{i.commission}}</td>
+        <td *ngIf="this.datatype=='salesPerson'">{{i.totalSale}}</td>
+        <td *ngIf="this.datatype=='admin'"><button (click)="update()" mat-mini-fab color="accent">
+                <mat-icon>edit</mat-icon>
+            </button></td>
+        <td *ngIf="this.datatype=='admin'"><button (click)="delete(i.adminId)" mat-mini-fab color="warn">
+                <mat-icon>delete</mat-icon>
+            </button></td>
+
+    </tr>
+</table>
+
+<table *ngIf="this.datatype=='commissionRule'">
+    <tr>
+        <th>Commission Percentage</th>
+        <th>MinSelling Price</th>
+        <th>MaxSelling Price</th>
+        <th>Product Type Id</th>
+    </tr>
+    <tr *ngFor="let i of data">
+        <td>{{i.commissionPercentage}}</td>
+        <td>{{i.minSellingPrice}}</td>
+        <td>{{i.maxSellingPrice}}</td>
+        <td>{{i.productTypeId}}</td>
+    </tr>
+</table>
+
+<table *ngIf="this.datatype=='levelCommissionRule'">
+    <tr>
+        <th>Level</th>
+        <th>Level Commission Percentage</th>
+    </tr>
+    <tr *ngFor="let i of data">
+        <td>{{i.level}}</td>
+        <td>{{i.levelcommissionPercentage}}</td>
+    </tr>
+</table>

@@ -1,0 +1,22 @@
+.containeropt {
+    text-align: center;
+    margin-top: 240px;
+}
+
+.bttnopt {
+    margin: 8px;
+    padding: 10px;
+    width: 200px;
+    font-size: 25px;
+}
+
+.bg-img {
+    background-image: url(/assets/images/img2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+h1 {
+    color: rgb(246, 55, 160)
+}

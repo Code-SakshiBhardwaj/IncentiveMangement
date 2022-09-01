@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="card">
+    <form (ngSubmit)="doSignup()">
+      <h1>{{this.usertype}} Sign Up</h1>
+      <div *ngIf="this.usertype=='admin'||this.usertype=='salesPerson'">
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Name</mat-label>
+          <input matInput name="name" [(ngModel)]="data.name">
+        </mat-form-field>
+
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput name="mobileNumber" [(ngModel)]="data.mobileNumber">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Email</mat-label>
+          <input matInput name="email" [(ngModel)]="data.email">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Password</mat-label>
+          <input matInput name="password" [(ngModel)]="data.password" type="password">
+        </mat-form-field>
+
+        <mat-radio-group class="faded" aria-label="Select Gender" name="gender" [(ngModel)]="data.gender">
+          <mat-label><span> Gender :</span></mat-label>
+          <mat-radio-button color="accent" value="female">Female
+          </mat-radio-button>
+          <mat-radio-button color="accent" value="male">Male</mat-radio-button>
+          <mat-radio-button color="accent" value="others">Others
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div *ngIf="this.usertype=='product'">
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Model</mat-label>
+          <input matInput name="model" [(ngModel)]="data.model">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Product Type</mat-label>
+          <input matInput name="productType" [(ngModel)]="data.productType">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Price</mat-label>
+          <input matInput name="price" [(ngModel)]="data.price">
+        </mat-form-field>
+      </div>
+      <div *ngIf="this.usertype=='commissionRule'">
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Commission Percentage</mat-label>
+          <input matInput name="commissionPercentage" [(ngModel)]="data.commissionPercentage">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Min Selling Price</mat-label>
+          <input matInput name="minSellingPrice" [(ngModel)]="data.minSellingPrice">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Max Selling Price</mat-label>
+          <input matInput name="maxSellingPrice" [(ngModel)]="data.maxSellingPrice">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Product Type Id</mat-label>
+          <input matInput name="productTypeId" [(ngModel)]="data.productTypeId">
+        </mat-form-field>
+      </div>
+      <div *ngIf="this.usertype=='levelCommissionRule'">
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Level</mat-label>
+          <input matInput name="level" [(ngModel)]="data.level">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline" color="accent">
+          <mat-label>Level Commission Percentage</mat-label>
+          <input matInput name="levelCommissionPercentage" [(ngModel)]="data.levelCommissionPercentage">
+        </mat-form-field>
+      </div>
+      <div class="text-center">
+        <button type="submit" mat-raised-button color="accent">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>

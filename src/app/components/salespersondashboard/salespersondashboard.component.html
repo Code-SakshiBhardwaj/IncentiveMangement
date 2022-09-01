@@ -1,0 +1,43 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened><img src="./assets/images/profileImg.png">
+        <span class="title">{{title}}</span>
+        <span class="usertype">🟢(SalesPerson)</span>
+
+        <a routerLink="/salespersondashboard/profile" [state]="{usertype:'salesPerson'}" mat-flat-button>
+            My Profile
+        </a>
+        <a routerLink="/salespersondashboard/signup" [state]="{usertype:'salesPerson'}" mat-flat-button>My
+            Sales</a>
+        <a routerLink="/salespersondashboard/table-levelCommissionRule" [state]="{datatype:'levelCommissionRule'}"
+            mat-flat-button>View LevelComm Rules</a>
+        <a routerLink="/salespersondashboard/table-commissionRule" [state]="{datatype:'commissionRule'}"
+            mat-flat-button>View Commision Rules
+        </a>
+        <a routerLink="/salespersondashboard/table-product" [state]="{datatype:'product'}" mat-flat-button>View
+            Products</a>
+        <a mat-flat-button [matMenuTriggerFor]="menu">Settings</a>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Edit profile Info</button>
+            <button mat-menu-item>change password</button>
+            <button mat-menu-item>Delete Profile</button>
+        </mat-menu>
+
+        <a (click)="logout()" mat-flat-button color="warn">Logout</a>
+
+
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <!--
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="Total Sales chart">Total Sales chart
+               <mat-spinner>
+
+                </mat-spinner>
+            </mat-tab>
+            <mat-tab label="Recent Transaction">Recent Transaction</mat-tab>
+            <mat-tab label="View SalesPerson">View SalesPerson</mat-tab>
+        </mat-tab-group>-->
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

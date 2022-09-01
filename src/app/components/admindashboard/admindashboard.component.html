@@ -1,0 +1,90 @@
+<mat-drawer-container class="example-container">
+
+    <mat-drawer mode="side" opened>
+        <img src="./assets/images/profileImg.png">
+        <span class="title">{{title}}</span>
+        <span class="usertype">🟢(Admin)</span>
+
+        <a routerLink="/admindashboard/profile" [state]="{usertype:'admin'}" mat-flat-button>
+            My Profile
+        </a>
+        <a mat-flat-button [matMenuTriggerFor]="menu1">
+            Admin</a>
+        <mat-menu #menu1="matMenu">
+            <button routerLink="/admindashboard/signup-admin" [state]="{usertype:'admin'}" mat-menu-item>Add Admins
+            </button>
+            <button routerLink="/admindashboard/table-admin" [state]="{datatype:'admin'}" mat-menu-item>View
+                Admins</button>
+        </mat-menu>
+        <a mat-flat-button [matMenuTriggerFor]="menu2">
+            SalesPerson</a>
+        <mat-menu #menu2="matMenu">
+            <button routerLink="/admindashboard/signup-salesPerson" [state]="{usertype:'salesPerson'}" mat-menu-item>Add
+                SalesPerson
+            </button>
+            <button routerLink="/admindashboard/table-salesPerson" [state]="{datatype:'salesPerson'}" mat-menu-item>View
+                SalesPerson</button>
+            <button mat-menu-item>Add Manager</button>
+        </mat-menu>
+        <a routerLink="/admindashboard/signup" mat-flat-button>Add Sales</a>
+        <a mat-flat-button [matMenuTriggerFor]="menu3">
+            Products</a>
+        <mat-menu #menu3="matMenu">
+            <button routerLink="/admindashboard/signup-product" [state]="{usertype:'product'}" mat-menu-item>Add
+                Products
+            </button>
+            <button routerLink="/admindashboard/table-product" [state]="{datatype:'product'}" mat-menu-item>View
+                Products</button>
+        </mat-menu>
+
+        <a mat-flat-button [matMenuTriggerFor]="menu4">Commission
+            Rule</a>
+        <mat-menu #menu4="matMenu">
+            <button routerLink="/admindashboard/signup-commissionRule" [state]="{usertype:'commissionRule'}"
+                mat-menu-item>Add
+                Commission
+                Rule</button>
+            <button routerLink="/admindashboard/table-commissionRule" [state]="{datatype:'commissionRule'}"
+                mat-menu-item>View
+                Commission Rules</button>
+        </mat-menu>
+
+        <a mat-flat-button [matMenuTriggerFor]="menu5">Level Comm
+            Rule</a>
+        <mat-menu #menu5="matMenu">
+            <button routerLink="/admindashboard/signup-levelCommissionRule" [state]="{usertype:'levelCommissionRule'}"
+                mat-menu-item>Add
+                Level Commission
+                Rule</button>
+            <button routerLink="/admindashboard/table-levelCommissionRule" [state]="{datatype:'levelCommissionRule'}"
+                mat-menu-item>View
+                Level Commission Rules</button>
+        </mat-menu>
+
+        <a mat-flat-button [matMenuTriggerFor]="menu6">Settings</a>
+        <mat-menu #menu6="matMenu">
+            <button mat-menu-item>Edit profile
+                info</button>
+            <button mat-menu-item>change password</button>
+            <button mat-menu-item>Delete Profile</button>
+        </mat-menu>
+
+        <a mat-flat-button color="warn" (click)="logout()">Logout</a>
+
+
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <!--
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="Total Sales chart">Total Sales chart
+               <mat-spinner>
+
+                </mat-spinner>
+            </mat-tab>
+            <mat-tab label="Recent Transaction">Recent Transaction</mat-tab>
+            <mat-tab label="View SalesPerson">View SalesPerson</mat-tab>
+        </mat-tab-group>-->
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

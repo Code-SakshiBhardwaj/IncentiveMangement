@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+td,
+th {
+    border: 1px solid rgb(246, 55, 160);
+    padding: 8px;
+
+
+}
+
+tr:nth-child(odd) {
+    color: rgb(236, 134, 223);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(246, 55, 160);
+    color: white;
+}
+
+
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: rgb(246, 55, 160);
+    text-transform: capitalize;
+}
